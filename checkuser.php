@@ -3,10 +3,10 @@ require_once 'db_functions.php';
 $db = new db_functions();
 
 $response = array();
-if(ISSET($_POST['phone']){
+if(ISSET($_POST["phone"])){
     $phone = $_POST['phone'];
 
-    if($db->checkExistsUser($phone)){
+    if($db->checkUserExists($phone)){
         $response["exists"]=TRUE;
         echo json_encode($response);
     }

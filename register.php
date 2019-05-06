@@ -9,7 +9,7 @@ if(ISSET($_POST['phone'])&&ISSET($_POST['name'])&&ISSET($_POST['birthdate'])&&IS
     $birthdate = $_POST['birthdate'];
     $address = $_POST['address'];
 
-    if($db->checkExistsUser($phone)){
+    if($db->checkUserExists($phone)){
         $response["error_msg"]="User already exists with".$phone."";
         echo json_encode($response);
     }
