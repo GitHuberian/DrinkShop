@@ -70,4 +70,9 @@ class db_functions{
         return $banners;
         
     }
+
+    public function updateAvatar($phone, $fileName){
+        return $result=$this->conn->query("UPDATE user SET avatarUrl='$fileName' WHERE Phone = '$phone'");
+    }
+    
 }

@@ -12,6 +12,7 @@ if(ISSET($_POST['phone'])){
             $response["name"] = $user["Name"];
             $response["birthdate"] = $user["Birthdate"];
             $response["address"] = $user["Address"];
+            $response["avatarUrl"] = $user["avatarUrl"];
             echo json_encode($response);
         }
         else{
