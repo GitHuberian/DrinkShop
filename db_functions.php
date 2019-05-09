@@ -75,4 +75,13 @@ class db_functions{
         return $result=$this->conn->query("UPDATE user SET avatarUrl='$fileName' WHERE Phone = '$phone'");
     }
     
+    public function getMenuCategories(){
+        $result = $this->conn->query("SELECT * FROM Menu");
+        $menu = array();
+
+        while($item = $result->fetch_assoc())
+            $menu[] = $item;
+        return $menu;
+        
+    }
 }
