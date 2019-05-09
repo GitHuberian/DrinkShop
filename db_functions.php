@@ -60,4 +60,14 @@ class db_functions{
         else
             return NULL;
     }
+
+    public function getBanner(){
+        $result = $this->conn->query("SELECT * FROM banner ORDER BY IDBanner LIMIT 1");
+        $banners = array();
+
+        while($item = $result->fetch_assoc())
+            $banners[] = $item;
+        return $banners;
+        
+    }
 }
